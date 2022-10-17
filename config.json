@@ -1,5 +1,5 @@
 {
-  "name": "Cornerstone",
+  "name": "Cornerstone 17-10-2022",
   "version": "6.6.1",
   "template_engine": "handlebars_v4",
   "meta": {
@@ -449,7 +449,7 @@
         "show_product_dimensions": false,
         "show_product_swatch_names": true,
         "product_list_display_mode": "grid",
-        "logo-position": "center",
+        "logo-position": "left",
         "logo_size": "250x100",
         "logo_fontSize": 28,
         "brand_size": "190x250",
@@ -510,6 +510,7 @@
         "color-greyLight": "#999999",
         "color-greyLighter": "#cccccc",
         "color-greyLightest": "#e5e5e5",
+        "color-blue": "#0073a4",
         "banner--deafault-backgroundColor": "#707070",
         "button--default-color": "#666666",
         "button--default-colorHover": "#333333",
