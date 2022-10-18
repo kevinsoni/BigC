@@ -50,7 +50,7 @@
         display: block;
         height: auto;
         padding: 0;
-        position: relative;
+        // position: relative;
     }
 
     &.is-open {
@@ -78,6 +78,7 @@
         overflow-y: visible;
         padding: 0;
         text-align: center;
+        margin: 0 28%;
     }
 
     ul {
@@ -109,7 +110,7 @@
         float: none;
     }
 
-    + .navPages-list {
+    +.navPages-list {
         border-top: 1px solid $navPages-list--user-borderColor;
         margin-top: spacing("half");
         padding-top: spacing("half");
@@ -288,7 +289,7 @@
         display: block;
     }
 
-    .navPage-subMenu-action:not(.navPages-action-depth-max) + & {
+    .navPage-subMenu-action:not(.navPages-action-depth-max)+& {
         margin-left: spacing("double"); //
 
         @include breakpoint("medium") {
@@ -330,7 +331,7 @@
         display: block;
     }
 
-    .navPages-list:not(.navPages-list-depth-max) .navPages-action.has-subMenu + & {
+    .navPages-list:not(.navPages-list-depth-max) .navPages-action.has-subMenu+& {
         .navPage-subMenu-list {
             margin-right: 0;
 
@@ -341,7 +342,7 @@
     }
 }
 
-.has-subMenu.is-root + .navPage-subMenu-horizontal {
+.has-subMenu.is-root+.navPage-subMenu-horizontal {
     @include breakpoint("medium") {
         border-left: 0;
         height: $navPage-subMenu-horizontal-height;
@@ -385,7 +386,7 @@
             width: 100%;
         }
 
-        > .navPage-subMenu-action {
+        >.navPage-subMenu-action {
             border-bottom: 1px solid stencilColor("navPages-subMenu-separatorColor");
             margin-bottom: spacing("half") + spacing("quarter");
         }
@@ -455,7 +456,7 @@
         display: none;
     }
 
-    > .container {
+    >.container {
         padding: 0;
     }
 

@@ -15,59 +15,96 @@
 //    setting the previous styles to medium breakpoint and adjusts for nudge in (7).
 //
 // -----------------------------------------------------------------------------
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Condensed&display=swap');
 
 .navUser {
     @include nav($style: "navBar", $wrapper: "nav");
     @include verticalPositionMiddle("absolute");
     right: 0;
     top: 26px; // 2
-    width: 100%; // 4
+    width: 75%; // 4
     z-index: zIndex("lowest"); // 5.
 
     @include breakpoint("medium") {
         padding: 0 spacing("single");
-        position: relative;
-        right: auto;
-        top: auto;
-        transform: none;
+        // position: relative;
+        // right: auto;
+        // top: auto;
+        transform: translate(-2.5%, 69%);
         z-index: zIndex("high");
     }
 
-    .dropdown-menu {
-        background-color: stencilColor("navUser-dropdown-backgroundColor");
-        border: 1px solid stencilColor("navUser-dropdown-borderColor");
-        box-shadow: container("dropShadow");
-        position: absolute;
+    input {
+        width: 427px;
+        height: 42px;
+        border: 2px solid #f19b3a;
+        border-radius: 5px;
+        font-style: italic;
+        outline: none;
+    }
 
-        &.is-open {
-            &::before {
-                @include css-triangle(
-                    $triangle-direction: "bottom",
-                    $triangle-size: 10px,
-                    $triangle-color: stencilColor("navUser-dropdown-borderColor")
-                );
-                bottom: 100%;
-                left: spacing("half");
-                position: absolute;
-            }
+    .call {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 0 90px 0 40px;
+    }
 
-            &::after {
-                @include css-triangle(
-                    $triangle-direction: "bottom",
-                    $triangle-size: 8px,
-                    $triangle-color: stencilColor("navUser-dropdown-backgroundColor")
-                );
-                bottom: 100%;
-                left: spacing("half") + remCalc(2px);
-                position: absolute;
-            }
+    .call p a {
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 20px;
+        font-family: 'Ubuntu Condensed', sans-serif;
+    }
+
+    .call p {
+        margin: 0;
+    }
+
+    button {
+        position: relative;
+        right: 40px;
+    }
+
+    .newcart {
+        padding: 0 115px;
+    }
+}
+
+
+.dropdown-menu {
+    background-color: stencilColor("navUser-dropdown-backgroundColor");
+    border: 1px solid stencilColor("navUser-dropdown-borderColor");
+    box-shadow: container("dropShadow");
+    position: absolute;
+
+    &.is-open {
+        &::before {
+            @include css-triangle($triangle-direction: "bottom",
+                $triangle-size: 10px,
+                $triangle-color: stencilColor("navUser-dropdown-borderColor"));
+            bottom: 100%;
+            left: spacing("half");
+            position: absolute;
+        }
+
+        &::after {
+            @include css-triangle($triangle-direction: "bottom",
+                $triangle-size: 8px,
+                $triangle-color: stencilColor("navUser-dropdown-backgroundColor"));
+            bottom: 100%;
+            left: spacing("half") + remCalc(2px);
+            position: absolute;
         }
     }
 }
 
+
 .navUser-section {
     @include breakpoint("medium") {
         position: relative; // 7
+        display: flex;
+        align-items: center;
     }
 }
 
@@ -100,7 +137,7 @@
     }
 }
 
-.navUser-action--currencySelector + .dropdown-menu {
+.navUser-action--currencySelector+.dropdown-menu {
     &::before {
         left: auto !important; // 6
         right: spacing("half"); // 6
@@ -112,7 +149,7 @@
     }
 }
 
-.navUser-action--storeCredit + .dropdown-menu {
+.navUser-action--storeCredit+.dropdown-menu {
     max-width: remCalc(300px);
     padding: spacing("single");
 
@@ -178,6 +215,7 @@
             left: auto !important; // 7
             right: remCalc(5px); // 7
             top: auto !important; // 7
+
             @include breakpoint("medium") {
                 right: 0; // 7
             }
@@ -189,6 +227,7 @@
 
             &::before {
                 right: spacing("half") - remCalc(5px); // 8
+
                 @include breakpoint("medium") {
                     right: spacing("half"); // 8
                 }
@@ -196,6 +235,7 @@
 
             &::after {
                 right: spacing("half") - remCalc(3px); // 8
+
                 @include breakpoint("medium") {
                     right: spacing("half") + remCalc(2px); // 8
                 }
@@ -222,7 +262,7 @@
 
 .navUser-item--account {
     .navUser-or {
-        + .navUser-action {
+        +.navUser-action {
             margin-right: -0.5rem; // 1
         }
     }
@@ -254,11 +294,9 @@
         position: relative;
 
         &::before {
-            @include css-triangle(
-                $triangle-direction: "bottom",
+            @include css-triangle($triangle-direction: "bottom",
                 $triangle-size: 10px,
-                $triangle-color: color("greys", "lightest")
-            );
+                $triangle-color: color("greys", "lightest"));
             bottom: 0;
             left: 50%;
             position: absolute;
@@ -317,7 +355,9 @@
 // -----------------------------------------------------------------------------
 
 .countPill {
-    background-color: stencilColor("navUser-indicator-backgroundColor");
+    // background-color: stencilColor("navUser-indicator-backgroundColor");
+    position: relative;
+    right: 35px;
     border-radius: 50%;
     color: color("whites", "bright");
     display: none;
