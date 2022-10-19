@@ -34,14 +34,22 @@
         </li>
         <li class="navUser-item navUser-item--divider">|</li>
         {{/if}} -->
-        <li class="navUser-item">
+
+        <li class="navUser-section">
+            <div class="navPages-quickSearch123">
+                {{> components/common/quick-search name='nav-menu-quick-search'}}
+            </div>
+        </li>
+
+        <!-- search -->
+        <!-- <li class="navUser-item">
             <input type="text" id="fname" name="fname" placeholder="Search for a Product...">
             <button>
                 <img src="https://cdn11.bigcommerce.com/s-mvcgh2itw2/images/stencil/original/image-manager/image-2022-10-18t11-37-37-602z.png?t=1666093090"
                     alt="">
             </button>
+        </li> -->
 
-        </li>
         <li class="navUser-section call">
             <img src="https://cdn11.bigcommerce.com/s-mvcgh2itw2/images/stencil/original/image-manager/call.png?t=1666086987"
                 alt="">
@@ -86,33 +94,34 @@
             {{/if}}
             {{/if}}
         </li> -->
-        <li class="navUser-item dropdown">
 
+        <li class="navUser-item dropdown">
             <button class="dropbtn">Dropdown</button>
             <div class="dropdown-content">
                 <a href="#">Link 1</a>
                 <a href="#">Link 2</a>
                 <a href="#">Link 3</a>
             </div>
-
         </li>
 
-        <li class="newcart">
-            <img src="https://cdn11.bigcommerce.com/s-mvcgh2itw2/images/stencil/original/image-manager/cart.png?t=1666093967"
-                alt="">
+        <!-- <li class="newcart">
             <span class="countPill cart-quantity"></span>
-        </li>
-        <!-- <li class=" navUser-item navUser-item--cart">
+        </li> -->
+
+        <li class=" navUser-item navUser-item--cart newcart">
             <a class="navUser-action" data-cart-preview data-dropdown="cart-preview-dropdown" data-options="align:right"
                 href="{{urls.cart}}" aria-label="{{lang 'cart.nav_aria_label'}}">
-                <span class="navUser-item-cartLabel">{{lang 'common.cart'}}</span>
+                <img src="https://cdn11.bigcommerce.com/s-mvcgh2itw2/images/stencil/original/image-manager/cart.png?t=1666093967"
+                    alt="">
+                <!-- <span class="navUser-item-cartLabel">{{lang 'common.cart'}}</span> -->
                 <span class="countPill cart-quantity"></span>
             </a>
-
             <div class="dropdown-menu" id="cart-preview-dropdown" data-dropdown-content aria-hidden="true"></div>
-        </li> -->
+        </li>
     </ul>
+
     <div class="dropdown dropdown--quickSearch" id="quickSearch" aria-hidden="true" data-prevent-quick-search-close>
         {{> components/common/quick-search name='nav-quick-search'}}
     </div>
+
 </nav>

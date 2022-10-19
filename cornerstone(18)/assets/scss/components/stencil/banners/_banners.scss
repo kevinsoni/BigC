@@ -1,0 +1,37 @@
+// =============================================================================
+// Banners Component
+// =============================================================================
+
+
+// Banners
+// -----------------------------------------------------------------------------
+//
+// Purpose: Control the look and feel of the top and bottom site banners
+//
+// -----------------------------------------------------------------------------
+
+.banners {
+    // background-color: stencilColor("color-primary");
+    background-image: url(https://cdn11.bigcommerce.com/s-mvcgh2itw2/images/stencil/original/image-manager/pencil-banner.png?t=1665640625);
+    color: stencilColor("color-blue");
+    padding: spacing("half") 0;
+
+    background-repeat: no-repeat;
+    text-align: center;
+
+    p:last-child {
+        margin-bottom: 0;
+    }
+
+    a {
+        color: stencilColor("color-blue");
+    }
+}
+
+.banner {
+    @include grid-row;
+
+    +.banner {
+        margin-top: spacing("single");
+    }
+}
