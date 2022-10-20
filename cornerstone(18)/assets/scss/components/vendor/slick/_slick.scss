@@ -52,12 +52,12 @@
     }
 
     &::before {
-        @include carousel-arrow-color( $slick-arrow-color, "next");
+        @include carousel-arrow-color($slick-arrow-color, "next");
     }
 
     &:hover {
         &::before {
-            @include carousel-arrow-color( $slick-arrow-color-hover, "next");
+            @include carousel-arrow-color($slick-arrow-color-hover, "next");
         }
     }
 }
@@ -70,12 +70,12 @@
     }
 
     &::before {
-        @include carousel-arrow-color( $slick-arrow-color, "prev");
+        @include carousel-arrow-color($slick-arrow-color, "prev");
     }
 
     &:hover {
         &::before {
-            @include carousel-arrow-color( $slick-arrow-color-hover, "prev");
+            @include carousel-arrow-color($slick-arrow-color-hover, "prev");
         }
     }
 }
@@ -94,7 +94,8 @@
 // 2. Nesting depth due to plugin css
 // -----------------------------------------------------------------------------
 
-.slick-dots {  // 2
+.slick-dots {
+    // 2
     margin: 0;
 
     li {
@@ -104,13 +105,16 @@
 
         button,
         button::before {
-            @include square(15px);
+            height: 30px;
+            width: 22px;
             border-radius: 50%;
         }
 
         button {
-            border: 1px solid $slick-dot-color;
+            // border: 1px solid $slick-dot-color;
             display: inline-block;
+            background-image: url(https://cdn11.bigcommerce.com/s-mvcgh2itw2/images/stencil/original/image-manager/sliderdot.png?t=1666242970);
+            background-repeat: no-repeat;
             margin: 0;
             padding: 0;
             position: relative;
@@ -119,7 +123,7 @@
 
             &:hover {
                 &::before {
-                    background: $slick-dot-color;
+                    // background: $slick-dot-color;
                 }
             }
         }
@@ -133,7 +137,7 @@
 
         &.slick-active {
             button::before {
-                background: $slick-dot-color-active;
+                // background: $slick-dot-color-active;
             }
         }
     }
@@ -198,6 +202,7 @@ div.slick-slider {
     .slick-prev:focus &,
     .slick-next:focus &,
     .slick-dots button:focus & {
+
         &::before,
         &::after {
             display: block;

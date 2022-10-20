@@ -34,7 +34,8 @@
     }
 
     // for IE
-    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    @media screen and (-ms-high-contrast: active),
+    (-ms-high-contrast: none) {
         opacity: 0;
 
         &.slick-initialized {
@@ -73,17 +74,17 @@
         }
     }
 
-    .slick-dots {
-        bottom: spacing("third");
+    // .slick-dots {
+    //     bottom: spacing("third");
 
-        @include breakpoint("medium") {
-            bottom: spacing("single");
-        }
+    //     @include breakpoint("medium") {
+    //         bottom: spacing("single");
+    //     }
 
-        li {
-            @include carouselOpaqueBackgrounds($slick-dot-bgColor);
-        }
-    }
+    //     li {
+    //         @include carouselOpaqueBackgrounds($slick-dot-bgColor);
+    //     }
+    // }
 
     .slick-slide {
         &.is-square-image-type {
@@ -110,7 +111,7 @@
         &.is-image-error {
             .heroCarousel-image-wrapper {
                 background: url("../img/hero-carousel-image-load-error.svg") center center no-repeat;
-                background-size: contain;    
+                background-size: contain;
             }
         }
     }
@@ -125,7 +126,7 @@
 
     .heroCarousel-image {
         height: 100%;
-        object-fit: contain;
+        // object-fit: contain;
         object-position: 50% 0%;
         width: 100%;
 
@@ -140,7 +141,9 @@
             object-position: 50% 50%;
         }
 
-        &.compat-object-fit { // 1
+        &.compat-object-fit {
+
+            // 1
             .heroCarousel-image {
                 height: 100%;
                 width: 100%;
@@ -148,7 +151,8 @@
         }
     }
 
-    &.compat-object-fit { // 1
+    &.compat-object-fit {
+        // 1
         overflow: hidden;
 
         .heroCarousel-image {
@@ -177,11 +181,12 @@
 .heroCarousel-content {
     background-color: rgba($carousel-bgColor, 1);
     padding: spacing("half") spacing("single") (spacing("double"));
-    text-align: center;
+    // text-align: center;
 
     @include breakpoint("small") {
         @include carouselOpaqueBackgrounds;
-        background-color: rgba($carousel-bgColor, 0.9);
+        // background-color: rgba($carousel-bgColor, 0.9);
+        background-color: transparent;
         left: 0;
         margin: 0 auto;
         max-height: 80%;
@@ -189,9 +194,9 @@
         padding: spacing("single") * 1.5;
         padding: spacing("single");
         position: absolute;
-        right: 0;
+        right: 94px;
         top: 50%;
-        transform: translateY(-50%);
+        transform: translateY(-64%);
         width: remCalc(700px);
         width: 70%;
 
@@ -208,29 +213,47 @@
 }
 
 .heroCarousel-title {
-    color: $carousel-title-color;
+    color: white;
     font-size: fontSize("small");
     margin: 0;
 
     @include breakpoint("medium") {
-        font-size: fontSize("hero");
+        font-size: 71px;
+        font-weight: 700;
+        word-spacing: -7px;
+        font-family: 'Ubuntu', sans-serif;
     }
 }
 
 .heroCarousel-description {
-    color: $carousel-description-color;
+    color: black;
     font-size: fontSize("tiny");
     margin: 0;
 
     @include breakpoint("small") {
         font-size: fontSize("smallest");
+        font-family: 'Ubuntu', sans-serif;
     }
 
     @include breakpoint("medium") {
         font-size: fontSize("smaller");
+        font-weight: 500;
+        font-size: 32px;
+        font-family: 'Ubuntu', sans-serif;
     }
 }
 
 .heroCarousel-action {
     margin: spacing("single") 0 0;
+    border-radius: 10px;
+    background-color: #fff600;
+    color: #000000;
+    border-color: #fff600;
+}
+
+.heroCarousel-slide a {
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
 }

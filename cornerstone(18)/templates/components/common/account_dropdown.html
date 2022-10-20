@@ -10,27 +10,26 @@
                 </svg>
             </i>
         </a>
-        <ul class="dropdown-menu" id="currencySelection" data-dropdown-content aria-hidden="true" tabindex="-1">
-            {{#each currency_selector.currencies}}
+        <ul class="dropdown-menu" id="currencySelection" data-dropdown-content aria-hidden="true">
+           
             <li class="dropdown-menu-item">
-                <a href="{{{switch_url}}}"
-                   data-currency-code="{{{code}}}"
-                   {{#if cart_currency_switch_url.length '>' 0 }}
-                   data-cart-currency-switch-url="{{{cart_currency_switch_url}}}"
-                   {{/if}}
-                   data-warning="{{lang 'common.currency_switch_promotion'}}"
+                <a href="https://kevin-s4.mybigcommerce.com/login.php"
                 >
-                {{#if is_active}}
-                    <strong>{{name}}</strong>
-                {{else}}
-                    {{name}}
-                {{/if}}
+                    <strong>Sign In</strong>
                 </a>
             </li>
             <li class="dropdown-menu-item">
-                sign in</li>
-            {{/each}}
+                <a href="http://localhost:3000/login.php?action=create_account"
+                   data-currency-code="{{{code}}}"
+                   data-cart-currency-switch-url="{{{cart_currency_switch_url}}}"
+                   data-warning="{{lang 'common.currency_switch_promotion'}}"
+                >
+                    <strong>Register</strong>
+                </a>
+            </li>
+           
         </ul>
     </li>
 </ul>
 <!-- {{/if}} -->
+

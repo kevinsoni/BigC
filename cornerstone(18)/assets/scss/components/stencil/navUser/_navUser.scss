@@ -17,6 +17,11 @@
 // -----------------------------------------------------------------------------
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu+Condensed&display=swap');
 
+.navUser-section + .navUser-section {
+    transform: translate(2%, 76%);
+    gap: 15px;
+}
+
 .navUser {
     @include nav($style: "navBar", $wrapper: "nav");
     @include verticalPositionMiddle("absolute");
@@ -30,7 +35,8 @@
         // position: relative;
         // right: auto;
         // top: auto;
-        transform: translate(-1.25%, 25%);
+
+        // transform: translate(-9%, 25%);
         z-index: zIndex("high");
     }
 
@@ -47,7 +53,7 @@
         display: flex;
         align-items: center;
         gap: 10px;
-        padding: 0 100px 0 40px;
+        padding: 0 90px 0 40px;
     }
 
     .call p a {
@@ -84,7 +90,7 @@
                 $triangle-size: 10px,
                 $triangle-color: stencilColor("navUser-dropdown-borderColor"));
             bottom: 100%;
-            left: spacing("half");
+            left: 69%;
             position: absolute;
         }
 
@@ -93,7 +99,7 @@
                 $triangle-size: 8px,
                 $triangle-color: stencilColor("navUser-dropdown-backgroundColor"));
             bottom: 100%;
-            left: spacing("half") + remCalc(2px);
+            left: 70%;
             position: absolute;
         }
     }
@@ -104,6 +110,7 @@
     @include breakpoint("medium") {
         position: relative; // 7
         display: flex;
+        float: right;
         align-items: center;
     }
 }
